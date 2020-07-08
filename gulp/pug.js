@@ -71,13 +71,13 @@ const pug = ({ gulp, taskTarget, config, plugins, args, browserSync, baseUrl }) 
             }
           })
         )
-        // .pipe(plugins.notify({
-        //   title: 'Pug Starter - CodeTap',
-        //   message: 'Converting PUG into beautiful HTML'
-        // }))
+         .pipe(plugins.notify({
+           title: 'Pug Starter - CodeTap',
+           message: 'Converting PUG into beautiful HTML'
+         }))
         .on('error', function(error) {
           browserSync.notify(printError(error), 25000);
-          reload = false;
+          reload = true;
           this.emit('end');
           logError(error.name, error.message);
         })
